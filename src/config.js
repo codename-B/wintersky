@@ -185,7 +185,7 @@ class Config {
 
 		if (comps) {
 			function comp(id) {
-				return comps[`minecraft:${id}`]
+				return comps[id] || comps[`minecraft:${id}`]
 			}
 			if (comp('emitter_initialization')) {
 				var cr_v = comp('emitter_initialization').creation_expression;
