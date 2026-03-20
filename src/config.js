@@ -357,6 +357,9 @@ class Config {
 						this.set('particle_collision_events', [events]);
 					}
 				}
+				if (comp('particle_motion_collision').pass_through_materials) {
+					this.set('particle_collision_pass_through_materials', comp('particle_motion_collision').pass_through_materials);
+				}
 			}
 			if (comp('particle_initial_speed') !== undefined) {
 				var c = comp('particle_initial_speed')
@@ -611,6 +614,7 @@ Config.types = {
 	particle_collision_collision_radius: {type: 'number'},
 	particle_collision_expire_on_contact: {type: 'boolean'},
 	particle_collision_events: {type: 'object', array: true},
+	particle_collision_pass_through_materials: {type: 'string', array: true},
 	particle_events_creation: {type: 'string', array: true},
 	particle_events_expiration: {type: 'string', array: true},
 	particle_events_timeline: {type: 'object'},
